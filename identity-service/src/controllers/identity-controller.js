@@ -1,6 +1,6 @@
 
 const RefreshToken = require('../models/refreshToken');
-const User = require('../models/user');
+const User = require('../models/User');
 const generateToken = require('../utils/generateToken');
 const logger = require('../utils/logger');
 const {validateRegistration, validateLogin} = require('../utils/validation');
