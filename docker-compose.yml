@@ -15,6 +15,8 @@ services:
       - RABBITMQ_URL=amqp://rabbitmq:5672
   identity-service:
     build: ./identity-service
+    ports:
+      - "3001:3001"
     env_file:
       - ./identity-service/.env
     depends_on:
@@ -28,6 +30,8 @@ services:
     build: ./post-service
     env_file:
       - ./post-service/.env
+    ports:
+      - "3002:3002"
     depends_on:
       - redis
       - rabbitmq
@@ -39,6 +43,8 @@ services:
     build: ./media-service
     env_file:
       - ./media-service/.env
+    ports:
+      - "3003:3003"
     depends_on:
       - redis
       - rabbitmq
@@ -50,6 +56,8 @@ services:
     build: ./search-service
     env_file:
       - ./search-service/.env
+    ports:
+      - "3004:3004"
     depends_on:
       - redis
       - rabbitmq
